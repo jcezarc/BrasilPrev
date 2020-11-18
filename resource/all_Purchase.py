@@ -6,7 +6,7 @@ from service.Purchase_service import PurchaseService
 
 class AllPurchase(Resource):
 
-    # @jwt_required
+    @jwt_required
     def get(self):
         """
         Returns all records from the table Purchase
@@ -16,7 +16,7 @@ class AllPurchase(Resource):
         service = PurchaseService()
         return service.find(request.args)
     
-    # @jwt_required
+    @jwt_required
     def post(self):
         """
         Write a new record in Purchase
@@ -27,7 +27,7 @@ class AllPurchase(Resource):
         service = PurchaseService()
         return service.insert(req_data)
 
-    # @jwt_required
+    @jwt_required
     def put(self):
         """
         Updates a record in Purchase

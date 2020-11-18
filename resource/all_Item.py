@@ -6,7 +6,7 @@ from service.Item_service import ItemService
 
 class AllItem(Resource):
 
-    # @jwt_required
+    @jwt_required
     def get(self):
         """
         Returns all records from the table Item
@@ -16,7 +16,7 @@ class AllItem(Resource):
         service = ItemService()
         return service.find(request.args)
     
-    # @jwt_required
+    @jwt_required
     def post(self):
         """
         Write a new record in Item
@@ -27,7 +27,7 @@ class AllItem(Resource):
         service = ItemService()
         return service.insert(req_data)
 
-    # @jwt_required
+    @jwt_required
     def put(self):
         """
         Updates a record in Item

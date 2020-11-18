@@ -6,7 +6,7 @@ from service.Product_service import ProductService
 
 class AllProduct(Resource):
 
-    # @jwt_required
+    @jwt_required
     def get(self):
         """
         Returns all records from the table Product
@@ -16,7 +16,7 @@ class AllProduct(Resource):
         service = ProductService()
         return service.find(request.args)
     
-    # @jwt_required
+    @jwt_required
     def post(self):
         """
         Write a new record in Product
@@ -27,7 +27,7 @@ class AllProduct(Resource):
         service = ProductService()
         return service.insert(req_data)
 
-    # @jwt_required
+    @jwt_required
     def put(self):
         """
         Updates a record in Product

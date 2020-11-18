@@ -6,7 +6,7 @@ from service.Customer_service import CustomerService
 
 class AllCustomer(Resource):
 
-    # @jwt_required
+    @jwt_required
     def get(self):
         """
         Returns all records from the table Customer
@@ -16,7 +16,7 @@ class AllCustomer(Resource):
         service = CustomerService()
         return service.find(request.args)
     
-    # @jwt_required
+    @jwt_required
     def post(self):
         """
         Write a new record in Customer
@@ -27,7 +27,7 @@ class AllCustomer(Resource):
         service = CustomerService()
         return service.insert(req_data)
 
-    # @jwt_required
+    @jwt_required
     def put(self):
         """
         Updates a record in Customer

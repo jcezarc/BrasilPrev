@@ -4,7 +4,7 @@ from service.Product_service import ProductService
 
 class ProductById(Resource):
 
-    # @jwt_required
+    @jwt_required
     def get(self, id):
         """
         Search in  Product by the field id
@@ -14,7 +14,7 @@ class ProductById(Resource):
         service = ProductService()
         return service.find(None, id)
 
-    # @jwt_required
+    @jwt_required
     def delete(self, id):
         """
         Delete a record of Product
